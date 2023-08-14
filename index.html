@@ -12,15 +12,24 @@
         <div class="main__game_top">
           <p class="main__game_text">Выбери сложность</p>
         </div>
-        <div class="main__game_center">
-          <div class="main__game_block"><img class="main__game_image" src="./img/1.png" alt=""></div>
-          <div class="main__game_block"><img class="main__game_image" src="./img/2.png" alt=""></div>
-          <div class="main__game_block"><img class="main__game_image" src="./img/3.png" alt=""></div>
-        </div>
+        <form class="main__game_center">
+          <div id="easy__game" class="main__game_block">
+            <img class="main__game_image" src="./img/1.png" alt="" />
+          </div>
+          <div id="medium__game" class="main__game_block">
+            <img class="main__game_image" src="./img/2.png" alt="" />
+          </div>
+          <div id="hard__game" class="main__game_block">
+            <img class="main__game_image" src="./img/3.png" alt="" />
+          </div>
+        </form>
         <div class="main__game_bot">
-          <button class="main__game_button"><p class="main__button_text">Старт</p></button>
+          <button class="main__game_button">
+            <p class="main__button_text">Старт</p>
+          </button>
         </div>
       </div>
     </section>
   </body>
+  <script src="./components/main.js"></script>
 </html>
