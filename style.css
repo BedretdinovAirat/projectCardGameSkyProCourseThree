@@ -44,6 +44,53 @@
   border-radius: 12px;
   background: #fff;
 }
+/* .main__radio > span::before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0080c1;
+  font-family: SkyproFont;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 72px;
+  letter-spacing: 0;
+  width: 98px;
+  height: 98px;
+  border-radius: 12px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+} */
+.custom-radio>span::before {
+  content: "";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #0080c1;
+  font-family: SkyproFont;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 72px;
+  letter-spacing: 0;
+  width: 98px;
+  height: 98px;
+  border-radius: 12px;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+.custom_radio_1>span::before {
+  content: '1';
+}
+.custom_radio_1>span::before {
+  content: '2';
+}
+.custom_radio_1>span::before {
+  content: '3';
+}
 .main__game_image {
   margin-top: 20px;
   margin-left: auto;
