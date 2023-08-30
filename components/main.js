@@ -1,5 +1,5 @@
-const main = document.querySelector(".main");
-const outCards = document.getElementById(".app__cards");
+const main = document.querySelector(".main")
+const outCards = document.getElementById(".app__cards")
 const cards = {
   hearts: {
     ace: "./img/cards/aceHearts.svg",
@@ -45,10 +45,25 @@ const cards = {
     seven: "./img/cards/sevenSpades.svg",
     six: "./img/cards/sixSpades.svg",
   },
-};
+}
+// const annArr = [spades.ace, spades.king];
 const games = {
   level: "",
-};
+}
+// массив 4 карты с разными свойствами
+// рендер функция мапится массив в зависимости от свойств будет показана опредлеанная карта
+// массив со всеми комбинациями карт
+//
+//
+//
+//
+//
+// const newCards = [{
+//   rank: 'king',
+//   masti: 'hearts',
+//   isCardOpen: true,
+// }];
+
 const easyApp = `<div class="containter__cards">
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
@@ -62,7 +77,7 @@ const easyApp = `<div class="containter__cards">
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
-          </div>`;
+          </div>`
 const middleApp = `<div class="containter__cards">
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
@@ -88,7 +103,7 @@ const middleApp = `<div class="containter__cards">
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
-          </div>`;
+          </div>`
 const hardApp = `<div class="containter__cards">
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
@@ -126,7 +141,8 @@ const hardApp = `<div class="containter__cards">
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
-          </div>`;
+          </div>`
+
 //  Рендер фукнция вёрстки
 const renderCards = () => {
   const cardsHTML = `<div class="containter__cards">
@@ -143,43 +159,43 @@ const renderCards = () => {
           <img src="./img/reverseCard.svg" alt="" />
           <img src="./img/reverseCard.svg" alt="" />
           </div>
-          `;
+          `
   // outCards.innerHTML = cardsHTML;
   // main.innerHTML = cardsHTML;
-  console.log(cardsHTML);
-};
-renderCards();
+  console.log(cardsHTML)
+}
+renderCards()
 window.document.getElementById("easy__game").addEventListener("click", () => {
-  alert("ты нажал на 1");
+  alert("ты нажал на 1")
   // main.innerHTML = "Ты выбрал легкую игру!";
   // localStorage.setItem("games", JSON.stringify(games));
-  games.level = 1;
-});
+  games.level = 1
+})
 window.document.getElementById("medium__game").addEventListener("click", () => {
-  alert("ты нажал на 2");
+  alert("ты нажал на 2")
   // main.innerHTML = "Ты выбрал среднюю игру!";
   // localStorage.setItem("games", JSON.stringify(games));
-  games.level = 2;
-});
+  games.level = 2
+})
 window.document.getElementById("hard__game").addEventListener("click", () => {
-  alert("ты нажал на 3");
+  alert("ты нажал на 3")
   // main.innerHTML = "Ты выбрал сложную игру!";
   // localStorage.setItem("games", JSON.stringify(games));
-  games.level = 3;
-});
+  games.level = 3
+})
 window.document
   .getElementById("button__start")
   .addEventListener("click", () => {
-    alert("yes");
+    alert("yes")
     switch (games.level) {
       case 1:
-        main.innerHTML = easyApp;
-        break;
+        main.innerHTML = easyApp
+        break
       case 2:
-        main.innerHTML = middleApp;
+        main.innerHTML = middleApp
       case 3:
-        main.innerHTML = hardApp;
+        main.innerHTML = hardApp
       default:
-        break;
+        break
     }
-  });
+  })

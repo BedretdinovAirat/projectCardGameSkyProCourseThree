@@ -1,8 +1,23 @@
+@font-face {
+  font-family: StratosSkyeng, sans-serif;
+  font-weight: 400;
+  src:
+    url("./fonts/stratosskyengweb-regular.woff2") format("woff2"),
+    url("./fonts/sstratosskyengweb-regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: StratosSkyeng, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 .main {
   display: flex;
   justify-content: center;
@@ -10,6 +25,7 @@
   background-color: #004980;
   height: 1024px;
 }
+
 .main__game {
   gap: 40px;
   width: 480px;
@@ -21,6 +37,7 @@
   background-color: #c2f5ff;
   /* background: #c2f5ff; */
 }
+
 .main__game_text {
   width: 208px;
   color: #004980;
@@ -32,12 +49,14 @@
   font-weight: 400;
   line-height: 48px; /* 120% */
 }
+
 .main__game_center {
   display: flex;
   /* flex-direction: column; */
   justify-content: center;
   gap: 26px;
 }
+
 .main__game_block {
   width: 98px;
   height: 98px;
@@ -63,6 +82,7 @@
   background-position: center center;
   background-size: 50% 50%;
 } */
+
 .custom-radio > span::before {
   content: "";
   display: flex;
@@ -82,15 +102,19 @@
   background-position: center center;
   background-size: 50% 50%;
 }
+
 .custom_radio_1 > span::before {
   content: "1";
 }
+
 .custom_radio_1 > span::before {
   content: "2";
 }
+
 .custom_radio_1 > span::before {
   content: "3";
 }
+
 .main__game_image {
   margin-top: 20px;
   margin-left: auto;
@@ -99,6 +123,7 @@
   flex-direction: column;
   justify-content: center;
 }
+
 .main__game_button {
   display: flex;
   justify-content: center;
@@ -109,6 +134,7 @@
   border-radius: 12px;
   background: #7ac100;
 }
+
 .main__button_text {
   display: flex;
   text-align: center;
@@ -123,11 +149,13 @@
   font-weight: 400;
   line-height: 32px;
 }
+
 /* Стили для game */
 .main__page {
   background-color: #004980;
   height: 1024px;
 }
+
 .cards {
   padding-top: 35px;
   /* padding-bottom: 35px; */
@@ -136,6 +164,7 @@
   gap: 15px;
   grid-template-columns: repeat(4, 1fr);
 }
+
 .container__cards {
   display: grid;
   place-items: center;
