@@ -35,6 +35,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #c2f5ff;
+
   /* background: #c2f5ff; */
 }
 
@@ -52,6 +53,7 @@ body {
 
 .main__game_center {
   display: flex;
+
   /* flex-direction: column; */
   justify-content: center;
   gap: 26px;
@@ -63,6 +65,7 @@ body {
   border-radius: 12px;
   background: #fff;
 }
+
 /* .main__radio > span::before {
   content: "";
   display: flex;
@@ -127,6 +130,7 @@ body {
 .main__game_button {
   display: flex;
   justify-content: center;
+
   /* text-align: center; */
   align-items: center;
   width: 246px;
@@ -137,7 +141,6 @@ body {
 
 .main__button_text {
   display: flex;
-  text-align: center;
   justify-content: center;
   flex-direction: column;
   color: #fff;
@@ -158,6 +161,7 @@ body {
 
 .cards {
   padding-top: 35px;
+
   /* padding-bottom: 35px; */
   display: grid;
   place-items: center;
