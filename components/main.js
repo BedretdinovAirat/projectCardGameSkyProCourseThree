@@ -117,7 +117,7 @@ const renderCards = () => {
       const cardsReverseHTML = shuffledArray
         .map(() => {
           return `
-          <img id"reverse-card__image" src='${imgReverseCard}' alt="" />
+          <img class="reverse-card__image" src='${imgReverseCard}' alt="" />
           `;
         })
         .join("");
@@ -132,8 +132,8 @@ const renderCards = () => {
   // создать обработчик событий на каждую карточку
 
   function clickCard() {
-    for (const cardReverseHTML of document.getElementById(
-      "reverse-card__image",
+    for (const cardReverseHTML of document.querySelectorAll(
+      ".reverse-card__image",
     )) {
       cardReverseHTML.addEventListener("click", () => {
         console.log("работает!");
