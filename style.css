@@ -171,3 +171,11 @@ body {
   place-items: center;
   column-gap: 15px;
 }
+
+.main__app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #004980;
+  height: 1024px;
+}
