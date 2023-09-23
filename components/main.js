@@ -130,7 +130,8 @@ const renderCards = () => {
   logicGame();
 
   // создать обработчик событий на каждую карточку
-
+  const arrayReverseCard = document.querySelectorAll(".reverse-card__image");
+  console.log(arrayReverseCard);
   function clickCard() {
     for (const cardReverseHTML of document.querySelectorAll(
       ".reverse-card__image",
