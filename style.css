@@ -10,6 +10,7 @@
 
 body {
   font-family: StratosSkyeng, sans-serif;
+  background-color: #004980;
 }
 
 * {
@@ -19,11 +20,11 @@ body {
 }
 
 .main {
+  margin-top: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #004980;
-  height: 1024px;
 }
 
 .main__game {
@@ -52,8 +53,6 @@ body {
 
 .main__game_center {
   display: flex;
-
-  /* flex-direction: column; */
   justify-content: center;
   gap: 26px;
 }
@@ -64,57 +63,6 @@ body {
   border-radius: 12px;
   background: #fff;
 }
-
-/* .main__radio > span::before {
-  content: "";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #0080c1;
-  font-family: SkyproFont;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 72px;
-  letter-spacing: 0;
-  width: 98px;
-  height: 98px;
-  border-radius: 12px;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
-} */
-
-.custom-radio > span::before {
-  content: "";
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #0080c1;
-  font-size: 64px;
-  font-weight: 400;
-  line-height: 72px;
-  letter-spacing: 0;
-  width: 98px;
-  height: 98px;
-  border-radius: 12px;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 50% 50%;
-}
-
-/* .custom_radio_1 > span::before {
-  content: "1";
-}
-
-.custom_radio_1 > span::before {
-  content: "2";
-}
-
-.custom_radio_1 > span::before {
-  content: "3";
-} */
 
 .main__game_image {
   margin-top: 20px;
@@ -153,7 +101,6 @@ body {
 /* Стили для game */
 .main__page {
   background-color: #004980;
-  height: 1024px;
 }
 
 .cards {
@@ -173,9 +120,86 @@ body {
 }
 
 .main__app {
-  display: flex;
   justify-content: center;
   align-items: center;
   background-color: #004980;
-  height: 1024px;
+}
+
+/* карточки */
+.hidden {
+  display: none;
+}
+
+/* heeader */
+
+.main__counter {
+  margin-bottom: 35px;
+  display: flex;
+  align-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #004980;
+  align-items: center;
+}
+
+.header {
+  margin-top: 41px;
+  margin-left: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.counter {
+  color: #fff;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 72px;
+}
+
+.block__time {
+  display: flex;
+  width: 155px;
+  gap: 57px;
+  justify-content: flex-end;
+}
+
+.time {
+  display: flex;
+  color: #fff;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.restart-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 52px;
+  margin-right: 22px;
+  width: 246px;
+  height: 48px;
+  border-radius: 12px;
+  background: #7ac100;
+}
+
+.restart-button_text {
+  color: #fff;
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: StratosSkyeng;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+.container {
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
 }

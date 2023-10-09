@@ -1,5 +1,6 @@
 export { renderPage };
-import { appElement } from "./main.js";
+import { renderCounter } from "./renderCounter.js";
+import { appElement, renderCards, changeCards, games } from "./main.js";
 const renderPage = () => {
   appElement.innerHTML = `<section class="main">
       <div class="main__game">
@@ -24,4 +25,23 @@ const renderPage = () => {
         </div>
       </div>
     </section>`;
+  const buttonStart = document.getElementById("button__start");
+  window.document.getElementById("easy__game").addEventListener("click", () => {
+    games.level = 3;
+  });
+  window.document
+    .getElementById("medium__game")
+    .addEventListener("click", () => {
+      games.level = 6;
+    });
+  window.document.getElementById("hard__game").addEventListener("click", () => {
+    games.level = 9;
+  });
+  buttonStart.addEventListener("click", () => {
+    renderCounter();
+    renderCards();
+    setTimeout(() => {
+      changeCards();
+    }, 5000);
+  });
 };

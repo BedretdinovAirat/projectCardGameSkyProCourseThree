@@ -1,7 +1,9 @@
-export { appElement };
+export { appElement, renderCards, changeCards, games };
 import { renderPage } from "./renderPage.js";
+import { renderCounter } from "./renderCounter.js";
 const appElement = document.getElementById("app");
 const imgReverseCard = "./img/reverseCard.svg";
+
 const cards = [
   "./img/cards/aceHearts.svg",
   "./img/cards/kingHearts.svg",
@@ -87,14 +89,14 @@ const cards = [
 //   },
 // };
 // const annArr = [spades.ace, spades.king];
-const games = {
-  level: 3,
+let games = {
+  level: 0,
 };
 
 renderPage();
 
 // общая видимость:
-const buttonStart = document.getElementById("button__start");
+// const buttonStart = document.getElementById("button__start");
 const shuffle = (array) => array.sort(() => Math.random() - 0.5);
 
 const renderCards = () => {
@@ -103,89 +105,70 @@ const renderCards = () => {
   const cardsHTML = shuffledArray
     .map((card, index) => {
       return `
-          <img data-index="${index}" src='${card}' alt="" />
+      <div class ="containter__cards">
+      <img class="main__card" data-index="${index}" src='${card}' alt="" />
+      <img class="reverse__card" src="${imgReverseCard}" alt="" />
+      </div>    
           `;
     })
     .join("");
-  appElement.innerHTML = `
-  <div class="containter__cards">
-  ${cardsHTML}
-  </div>`;
-  // console.log(cardsHTML);
-  function logicGame() {
-    setTimeout(() => {
-      const cardsReverseHTML = shuffledArray
-        .map(() => {
-          return `
-          <img class="reverse-card__image" src='${imgReverseCard}' alt="" />
-          `;
-        })
-        .join("");
-      appElement.innerHTML = `
-  <div class="containter__cards">
-  ${cardsReverseHTML}
-  </div>`;
-    }, 5000);
+  // appElement.innerHTML = cardsHTML;
+  const container = document.querySelector(".container");
+  container.insertAdjacentHTML("afterbegin", cardsHTML);
+  const reverseCards = document.querySelectorAll(".reverse__card");
+  for (const reverseCard of reverseCards) {
+    reverseCard.classList.add("hidden");
   }
-  logicGame();
-
-  // создать обработчик событий на каждую карточку
-  const arrayReverseCard = document.querySelectorAll(".reverse-card__image");
-  console.log(arrayReverseCard);
-  function clickCard() {
-    for (const cardReverseHTML of document.querySelectorAll(
-      ".reverse-card__image",
-    )) {
-      cardReverseHTML.addEventListener("click", () => {
-        console.log("работает!");
-      });
-    }
+};
+const changeCards = () => {
+  const reverseCards = document.querySelectorAll(".reverse__card");
+  const mainCards = document.querySelectorAll(".main__card");
+  for (const mainCard of mainCards) {
+    mainCard.classList.add("hidden");
   }
-  clickCard();
-  // создать сеттаймоут, внутри
-  const generateCardsArray = (cards) => {
-    return cards.map((img, index) => {
-      return {
-        id: index,
-        img: img,
-      };
-    });
-  };
-
-  const cardsArray = generateCardsArray(cards);
-  console.log(cardsArray);
+  for (const reverseCard of reverseCards) {
+    reverseCard.classList.remove("hidden");
+  }
+  goCards();
 };
 
-// const easyApp = `<div class="containter__cards">
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           <img src="./img/reverseCard.svg" alt="" />
-//           </div>`;
-
+const goCards = () => {
+  const containerCards = document.querySelectorAll(".containter__cards");
+  let mainCard;
+  let reverseCard;
+  let counterCards = 0;
+  for (const containerCard of containerCards) {
+    containerCard.addEventListener("click", () => {
+      let childrenElement = containerCard.children;
+      childrenElement[0].classList.remove("hidden");
+      childrenElement[1].classList.add("hidden");
+      counterCards++;
+      if (counterCards % 2 !== 0) {
+        mainCard = containerCard.children[0].src;
+      }
+      if (counterCards % 2 === 0) {
+        reverseCard = containerCard.children[0].src;
+        if (mainCard === reverseCard) {
+          alert("Поздравляю! Вы угадали!");
+        }
+        if (mainCard !== reverseCard) {
+          alert("Попробуйте ещё раз!");
+        }
+      }
+    });
+  }
+};
 //  Рендер фукнция вёрстки
-buttonStart.addEventListener("click", () => {
-  console.log(games.level);
-  renderCards();
-});
 
-window.document.getElementById("easy__game").addEventListener("click", () => {
-  games.level = 3;
-});
-window.document.getElementById("medium__game").addEventListener("click", () => {
-  games.level = 6;
-});
-window.document.getElementById("hard__game").addEventListener("click", () => {
-  games.level = 9;
-});
+// window.document.getElementById("easy__game").addEventListener("click", () => {
+//   games.level = 3;
+// });
+// window.document.getElementById("medium__game").addEventListener("click", () => {
+//   games.level = 6;
+// });
+// window.document.getElementById("hard__game").addEventListener("click", () => {
+//   games.level = 9;
+// });
 
 // 1. Написать один рендер
 // 2. Создать массив
