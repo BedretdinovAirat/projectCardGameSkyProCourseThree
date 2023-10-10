@@ -1,8 +1,20 @@
-export { appElement, renderCards, changeCards, games };
+export {
+  mainCard,
+  reverseCard,
+  counterGame,
+  appElement,
+  renderCards,
+  changeCards,
+  games,
+};
 import { renderPage } from "./renderPage.js";
-import { renderCounter } from "./renderCounter.js";
+import { endPage } from "./renderEnd.js";
 const appElement = document.getElementById("app");
 const imgReverseCard = "./img/reverseCard.svg";
+// общие переменные счётчик, карты
+let counterGame = 0;
+let mainCard;
+let reverseCard;
 
 const cards = [
   "./img/cards/aceHearts.svg",
@@ -134,8 +146,6 @@ const changeCards = () => {
 
 const goCards = () => {
   const containerCards = document.querySelectorAll(".containter__cards");
-  let mainCard;
-  let reverseCard;
   let counterCards = 0;
   for (const containerCard of containerCards) {
     containerCard.addEventListener("click", () => {
@@ -149,29 +159,17 @@ const goCards = () => {
       if (counterCards % 2 === 0) {
         reverseCard = containerCard.children[0].src;
         if (mainCard === reverseCard) {
-          alert("Поздравляю! Вы угадали!");
+          counterGame++;
+          if (counterGame % games.level === 0) {
+            alert("Поздравляю! Вы угадали!");
+            endPage();
+          }
         }
         if (mainCard !== reverseCard) {
           alert("Попробуйте ещё раз!");
+          endPage();
         }
       }
     });
   }
 };
-//  Рендер фукнция вёрстки
-
-// window.document.getElementById("easy__game").addEventListener("click", () => {
-//   games.level = 3;
-// });
-// window.document.getElementById("medium__game").addEventListener("click", () => {
-//   games.level = 6;
-// });
-// window.document.getElementById("hard__game").addEventListener("click", () => {
-//   games.level = 9;
-// });
-
-// 1. Написать один рендер
-// 2. Создать массив
-// 3. условие генерации карточек по уровням
-// 4.
-// 5.

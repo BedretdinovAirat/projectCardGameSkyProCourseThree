@@ -1,4 +1,4 @@
-export { renderCounter };
+export { renderCounter, time, gameTime };
 import { renderPage } from "./renderPage.js";
 import { appElement, renderCards, changeCards } from "./main.js";
 let time = 0;
