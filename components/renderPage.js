@@ -1,8 +1,9 @@
 export { renderPage };
 import { renderCounter } from "./renderCounter.js";
-import { appElement, renderCards, changeCards, games } from "./main.js";
+import { renderCards, changeCards, games } from "./main.js";
+const appElement = document.getElementById("app");
 const renderPage = () => {
-  appElement.innerHTML = `<section class="main">
+  const appHTML = `<section class="main">
       <div class="main__game">
         <div class="main__game_top">
           <p class="main__game_text">Выбери сложность</p>
@@ -25,6 +26,7 @@ const renderPage = () => {
         </div>
       </div>
     </section>`;
+  appElement.innerHTML = appHTML;
   const buttonStart = document.getElementById("button__start");
   window.document.getElementById("easy__game").addEventListener("click", () => {
     games.level = 3;

@@ -1,8 +1,9 @@
 export { renderCounter, time, gameTime };
 import { renderPage } from "./renderPage.js";
-import { appElement, renderCards, changeCards } from "./main.js";
+// import {renderCards, changeCards } from "./main.js";
 let time = 0;
 let gameTime;
+const appElement = document.getElementById("app");
 const renderCounter = () => {
   const newApp = `<div class="main__counter">
       <div class="header">

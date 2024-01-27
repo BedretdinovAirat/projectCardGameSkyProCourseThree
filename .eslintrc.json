@@ -12,7 +12,7 @@
   },
   "rules": {
     "prettier/prettier": "error",
-    "camelCase": "error",
+    "camelCase": false,
     "eqeqeq": ["error", "always"]
   }
 }

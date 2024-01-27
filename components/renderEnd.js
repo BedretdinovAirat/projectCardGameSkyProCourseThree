@@ -1,20 +1,13 @@
-import {
-  mainCard,
-  reverseCard,
-  counterGame,
-  appElement,
-  renderCards,
-  changeCards,
-  games,
-} from "./main.js";
-import { time, gameTime } from "./renderCounter.js";
+import { mainCard, reverseCard, counterGame, games } from "./main.js";
+import { time } from "./renderCounter.js";
 export { endPage };
+const appElement = document.getElementById("app");
 const endPage = () => {
   const winHTML = `<div class="main__game_end">
     <div class="result-game">
       <img
         class="celebration"
-        src="/img/mainImg/celebration.svg"
+        src="/img/mainImg/celebration.png"
         alt="celebration"
       />
       <div class="title-game">Вы выиграли!</div>
@@ -27,7 +20,7 @@ const endPage = () => {
     <div class="result-game">
       <img
         class="celebration"
-        src="/img/mainImg/dead.svg"
+        src="/img/mainImg/dead.png"
         alt="dead"
       />
       <div class="title-game">Вы проиграли!</div>

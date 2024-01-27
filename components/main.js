@@ -1,16 +1,10 @@
-export {
-  mainCard,
-  reverseCard,
-  counterGame,
-  appElement,
-  renderCards,
-  changeCards,
-  games,
-};
+export { mainCard, reverseCard, counterGame, renderCards, changeCards, games };
 import { renderPage } from "./renderPage.js";
 import { endPage } from "./renderEnd.js";
-const appElement = document.getElementById("app");
+import "../style.css";
 const imgReverseCard = "./img/reverseCard.svg";
+const appElement = document.getElementById("app");
+// console.log(appElement);
 // общие переменные счётчик, карты
 let counterGame = 0;
 let mainCard;
