@@ -1,7 +1,6 @@
-export { renderPage };
 import { renderCounter } from "./renderCounter.js";
-import { renderCards, changeCards, games } from "./main.js";
-const appElement = document.getElementById("app");
+import { appElement, renderCards, changeCards, games } from "./main.js";
+// const appElement = document.getElementById("app");
 const renderPage = () => {
   const appHTML = `<section class="main">
       <div class="main__game">
@@ -10,13 +9,13 @@ const renderPage = () => {
         </div>
         <form class="main__game_center">
           <div type="radio" id="easy__game" class="main__game_block">
-            <img class="main__game_image" src="./img/1.png" alt="" />
+            <img class="main__game_image" src="./static/img/1.png" alt="" />
           </div>
           <div type="radio" id="medium__game" class="main__game_block">
-            <img class="main__game_image" src="./img/2.png" alt="" />
+            <img class="main__game_image" src="./static/img/2.png" alt="" />
           </div>
           <div type="radio" id="hard__game" class="main__game_block">
-            <img class="main__game_image" src="./img/3.png" alt="" />
+            <img class="main__game_image" src="./static/img/3.png" alt="" />
           </div>
         </form>
         <div class="main__game_bot">
@@ -47,3 +46,4 @@ const renderPage = () => {
     }, 5000);
   });
 };
+export { renderPage };

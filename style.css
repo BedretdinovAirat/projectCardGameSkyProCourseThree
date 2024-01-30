@@ -2,8 +2,8 @@
   font-family: StratosSkyeng, sans-serif;
   font-weight: 400;
   src:
-    url("./fonts/stratosskyengweb-regular.woff2") format("woff2"),
-    url("./fonts/stratosskyengweb-regular.woff") format("woff");
+    url("./static/fonts/stratosskyengweb-regular.woff2") format("woff2"),
+    url("./static/fonts/stratosskyengweb-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }

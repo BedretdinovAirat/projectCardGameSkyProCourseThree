@@ -1,4 +1,3 @@
-export { renderCounter, time, gameTime };
 import { renderPage } from "./renderPage.js";
 // import {renderCards, changeCards } from "./main.js";
 let time = 0;
@@ -37,3 +36,4 @@ const renderCounter = () => {
     renderPage();
   });
 };
+export { renderCounter, time, gameTime };
