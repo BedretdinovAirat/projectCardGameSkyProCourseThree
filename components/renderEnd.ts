@@ -1,5 +1,5 @@
 import { mainCard, reverseCard, counterGame, games } from "./main";
-import { time } from "./renderCounter";
+import { gameTime } from "./renderCounter";
 import { renderPage } from "./renderPage";
 const appElement = document.getElementById("app") as HTMLElement;
 const endPage = () => {
@@ -12,7 +12,7 @@ const endPage = () => {
       />
       <div class="title-game">Вы выиграли!</div>
       <div class="end_text">Затраченное время:</div>
-      <div class="time-game">${time}</div>
+      <div class="time-game">${gameTime}</div>
       <button id="win-button" class="restart-button">Играть снова</button>
     </div>
   </div>`;
@@ -25,7 +25,7 @@ const endPage = () => {
       />
       <div class="title-game">Вы проиграли!</div>
       <div class="end_text">Затраченное время:</div>
-      <div class="time-game">${time}</div>
+      <div class="time-game">${gameTime}</div>
       <button id="lose-button" class="restart-button">Играть снова</button>
     </div>
   </div>`;

@@ -1,7 +1,7 @@
 import { renderPage } from "./renderPage";
 // import {renderCards, changeCards } from "./main.js";
 let time = 0;
-let gameTime;
+let gameTime: number | string;
 const appElement = document.getElementById("app") as HTMLElement;
 const renderCounter = () => {
   const newApp = `<div class="main__counter">
