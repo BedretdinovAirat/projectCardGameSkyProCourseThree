@@ -22,9 +22,7 @@ module.exports = {
       },
     ],
   },
-  resolve: {
-    extensions: [".ts", ".js"],
-  },
+  // resolve: {},
   stats: {
     errorDetails: true,
   },
@@ -42,6 +40,7 @@ module.exports = {
     }),
   ],
   resolve: {
+    extensions: [".ts", ".js"],
     fallback: {
       fs: false,
       child_process: false,
