@@ -2,6 +2,7 @@ import { renderPage } from "./renderPage";
 // import {renderCards, changeCards } from "./main.js";
 let time = 0;
 let gameTime: number | string;
+let timerId: NodeJS.Timeout;
 const appElement = document.getElementById("app") as HTMLElement;
 const renderCounter = () => {
   const newApp = `<div class="main__counter">
@@ -21,7 +22,7 @@ const renderCounter = () => {
   appElement.innerHTML = `${newApp}`;
   const counter = document.querySelector(".counter") as HTMLElement;
   console.log(counter);
-  let timerId = setInterval(() => {
+  timerId = setInterval(() => {
     let min: number | string = Math.floor(time / 60);
     min = min < 10 ? "0" + min : min;
     let sec: number | string = time % 60;
@@ -34,9 +35,9 @@ const renderCounter = () => {
     ".restart-button",
   ) as HTMLElement;
   restartButton.addEventListener("click", () => {
-    time = 0;
-    clearInterval(timerId);
+    // time = 0;
+    // clearInterval(timerId);
     renderPage();
   });
 };
-export { renderCounter, time, gameTime };
+export { renderCounter, time, gameTime, timerId };

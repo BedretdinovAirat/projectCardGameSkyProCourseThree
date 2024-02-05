@@ -1,5 +1,5 @@
 import { mainCard, reverseCard, counterGame, games } from "./main";
-import { gameTime } from "./renderCounter";
+import { gameTime, timerId } from "./renderCounter";
 import { renderPage } from "./renderPage";
 const appElement = document.getElementById("app") as HTMLElement;
 const endPage = () => {

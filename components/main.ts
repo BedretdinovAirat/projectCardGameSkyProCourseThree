@@ -10,6 +10,7 @@ export {
 import { renderPage } from "./renderPage";
 import { endPage } from "./renderEnd";
 import "../style.css";
+import { timerId } from "./renderCounter";
 const imgReverseCard = "./static/img/reverseCard.svg";
 const appElement = document.getElementById("app") as HTMLElement;
 // console.log(appElement);
@@ -59,7 +60,6 @@ const cards = [
 let games = {
   level: 0,
 };
-
 renderPage();
 
 // общая видимость:
@@ -70,7 +70,7 @@ const renderCards = () => {
   const cardsHTML = shuffledArray
     .map((card, index) => {
       return `
-      <div class ="containter__cards">
+      <div class ="container__cards">
       <img class="main__card" data-index="${index}" src='${card}' alt="" />
       <img class="reverse__card" src="${imgReverseCard}" alt="" />
       </div>    
@@ -98,7 +98,7 @@ const changeCards = () => {
 };
 
 const goCards = () => {
-  const containerCards = document.querySelectorAll(".containter__cards");
+  const containerCards = document.querySelectorAll(".container__cards");
   let counterCards = 0;
   for (const containerCard of containerCards) {
     containerCard.addEventListener("click", () => {
@@ -115,11 +115,13 @@ const goCards = () => {
           counterGame++;
           if (counterGame % games.level === 0) {
             alert("Поздравляю! Вы угадали!");
+            clearInterval(timerId);
             endPage();
           }
         }
         if (mainCard !== reverseCard) {
           alert("Попробуйте ещё раз!");
+          clearInterval(timerId);
           endPage();
         }
       }

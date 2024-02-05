@@ -1,4 +1,4 @@
-import { renderCounter } from "./renderCounter";
+import { renderCounter, timerId } from "./renderCounter";
 import { renderCards, changeCards, games } from "./main";
 const appElement = document.getElementById("app") as HTMLElement;
 const renderPage = () => {
@@ -46,5 +46,6 @@ const renderPage = () => {
       changeCards();
     }, 5000);
   });
+  clearInterval(timerId);
 };
 export { renderPage };
