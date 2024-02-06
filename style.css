@@ -193,6 +193,8 @@ body {
 }
 
 .container {
+  margin-left: 700px;
+  width: 500px;
   gap: 0.5rem;
   flex-wrap: wrap;
   display: flex;
@@ -209,14 +211,14 @@ body {
   height: 459px;
   margin-top: 158px;
   margin-bottom: 158px;
-  margin-left: 758px;
+  margin-left: 710px;
   background: #c2f5ff;
 }
 
-.result_game {
-  padding-left: 20px;
-  justify-content: center;
+.result-game {
+  display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .title-game {
