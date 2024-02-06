@@ -33,6 +33,7 @@ const endPage = () => {
     appElement.innerHTML = winHTML;
     const winButton = document.getElementById("win-button") as HTMLElement;
     winButton.addEventListener("click", () => {
+      clearInterval(timerId);
       renderPage();
     });
   }
@@ -40,6 +41,7 @@ const endPage = () => {
     appElement.innerHTML = loseHTML;
     const loseButton = document.getElementById("lose-button") as HTMLElement;
     loseButton.addEventListener("click", () => {
+      clearInterval(timerId);
       renderPage();
     });
   }
